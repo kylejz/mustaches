@@ -43,12 +43,23 @@ app.service('services', function($http, $q) {
 	}
 
 	this.getProfileInfo = function(username) {
+		console.log('get profile info')
 		var dfrd = $q.defer();
 		$http({
 			method: "GET",
 			url: "http://localhost:9001/api/user?username=" + username
 		}).then(function(response) {
 			dfrd.resolve(response.data);
+		})
+		return dfrd.promise;
+	}
+	this.changeHeart = function(itemId) {
+		var dfrd = $q.defer();
+		$http({
+			method: "POST",
+			url: "http://localhost:9001/api/hearts/" + itemId
+		}).then(function(response) {
+			dfrd.resolve(response);
 		})
 		return dfrd.promise;
 	}

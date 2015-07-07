@@ -5,6 +5,11 @@ var fs = require('fs');
 var random = require('mongoose-simple-random')
 var exports = {};
 
+exports.getUserInfo = function(req, res){
+	console.log(req.user); 
+	return req.user
+}
+
 exports.createUser = function(req, res) {
 	new User(req.body).save(function(err, data) {
 		if (err) {
@@ -85,8 +90,16 @@ exports.addLike = function(req, res) {
 		})
 }
 
-exports.addHeart = function(req, res) {
-	
+exports.changeHeart = function(req, res) {
+	console.log(req.user);
+	Mustache.findById(req.params.id, function(err, data) {
+		if (err) {
+			res.status(500).json(err);
+		} else {
+			console.log(data);
+			res.json(data);
+		}
+	})
 }
 
 module.exports = exports;

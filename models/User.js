@@ -4,7 +4,8 @@ var Mustache = require('./Mustache.js');
 var Status = require('./Status.js');
 
 var userSchema = new Schema({
-	username: {type: String, maxlength: 25, minlength: 3, index: true, unique: true, required: true},
+	facebookId: {type: String, index: true, unique: true},
+	username: String,
 	mustaches: [{type: mongoose.Schema.Types.ObjectId, ref: 'Mustache'}],
 	status: {type: mongoose.Schema.Types.ObjectId, ref: 'Status'}
 });
