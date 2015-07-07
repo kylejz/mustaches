@@ -1,0 +1,11 @@
+<dir-header></dir-header>
+
+<div ng-repeat="item in twoToUse track by $index">
+	<div>
+		<img ng-src="{{item.img}}">
+		<div>{{item.name}}</div>
+		<button ng-click="addLike(item._id); getNewRandom(item._id); postWinToFirebase(item)">yesss</button>
+	</div>
+</div>
+
+<dir-sidebar></dir-sidebar>

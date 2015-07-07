@@ -1,0 +1,12 @@
+<dir-header></dir-header>
+
+<div>
+	<div>{{profileData.username}}</div>
+	<div>{{aggScore()}}</div>
+	<div ng-repeat="item in profileData.mustaches">
+		<div>{{item.name}}</div>
+		<img ng-src="{{item.img}}">
+		<div>{{item.hearts.length}}</div>
+		<div>{{item.wins}}</div>
+	</div>
+</div>

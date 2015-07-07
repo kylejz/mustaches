@@ -1,0 +1,29 @@
+{
+  "name": "mustaches",
+  "version": "1.0.0",
+  "description": "the social side of facial hair",
+  "main": "serve.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "yes",
+    "key",
+    "also",
+    "words"
+  ],
+  "author": "Blue-footed Booby",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "body-parser": "^1.13.1",
+    "cors": "^2.7.1",
+    "express": "^4.13.0",
+    "express-session": "^1.11.3",
+    "mongoose": "^4.0.6",
+    "mongoose-attachments": "^0.1.0",
+    "mongoose-random": "^0.1.1",
+    "mongoose-simple-random": "^0.3.0",
+    "passport": "^0.2.2",
+    "passport-facebook": "^2.0.0"
+  }
+}

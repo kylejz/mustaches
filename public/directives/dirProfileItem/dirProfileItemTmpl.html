@@ -1,0 +1,10 @@
+<div ng-repeat="item in mustacheData">
+	<div>{{item.name}}</div>
+	<img ng-src="{{item.img}}"/>
+	<div dir-find-user="{{item.user}}">{{item.user}}</div>
+	<div ng-repeat="tag in item.tags">
+		<div>{{tag}}</div>
+	</div>
+	<dir-hearts></dir-hearts>
+	<div>wins: {{item.wins}}</div>
+</div>
