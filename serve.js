@@ -131,12 +131,12 @@ app.post('/api/submit_form', multer({limits: {fileSize: 10*1024*1024}}), functio
   })
 })
 
-var port = 9001;
+// var port = 9001;
 var mongoUri = 'mongodb://localhost:27017/fake-mustaches';
 mongoose.connect(mongoUri);
 mongoose.connection.once('open', function() {
 	console.log('yes.');
 });
-app.listen(port, function() {
+app.listen(process.env.PORT || 9001, function() {
 	console.log('Natalie ' + port + 'man');
 })
