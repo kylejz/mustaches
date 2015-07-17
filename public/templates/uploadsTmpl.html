@@ -1,0 +1,20 @@
+<div class="flex whole hunHeight">
+	<div class="mainContain">
+
+		<dir-header></dir-header>
+
+		<div class="flex">	
+			<form class="mainPageImg zeroAuto" name="createStacheForm">
+				<input class="searchBox" type="text" placeholder="Your picture's name..." ng-model="newMustache.name" required/>
+				<input class="searchBox marg5LR" type="text" placeholder="Add some tags!" ng-model="newMustache.tags"/>
+				<button class="genericBtn" ng-click="postMustache(newMustache)">post</button>
+			</form>
+		</div>	
+
+	</div>
+
+	<div class="sideContain">
+		<dir-sidebar></dir-sidebar>
+	</div>
+
+</div>

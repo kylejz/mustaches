@@ -1,11 +1,20 @@
-<dir-header></dir-header>
+<div class="flex whole hunHeight">
+	
+	<div class="mainContain">
+		<dir-header></dir-header>
+		<div class="mainPageHeadline zeroAuto">Which is more attractive?</div>
+		<div class="flex wrap around">
+			<div ng-repeat="item in twoToUse track by $index">
+				<div class="mainPageImg flex flexColumn">
+					<div class="dblText zeroAuto singleBrdrBtm">{{item.name}}</div>
+					<img class="largeImg margUpDown" ng-src="{{item.img}}">
+					<button class="zeroAuto mainPageBtn"ng-click="addLike(item._id); getNewRandom(item._id); postWinToFirebase(item)">this is attractive</button>
+				</div>
+			</div>
+		</div>
+	</div>
 
-<div ng-repeat="item in twoToUse track by $index">
-	<div>
-		<img ng-src="{{item.img}}">
-		<div>{{item.name}}</div>
-		<button ng-click="addLike(item._id); getNewRandom(item._id); postWinToFirebase(item)">yesss</button>
+	<div class="sideContain">
+		<dir-sidebar></dir-sidebar>
 	</div>
 </div>
-
-<dir-sidebar></dir-sidebar>

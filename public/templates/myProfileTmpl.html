@@ -1,0 +1,46 @@
+<div class="flex whole hunHeight">
+
+	<div class="mainContain hunHeight">
+		
+		<dir-header></dir-header>
+
+		<div class="mainPageHeadline zeroAuto flex between">
+			<div>{{myProfileData.username}}</div>
+			<div class="faded halfText">{{myProfileData.status}}</div>	
+		</div>
+
+		<div class="scroll hMax76">	
+			<div class="flex wrap around">
+				<div ng-repeat="item in myProfileData.mustaches">
+					<div class="mainPageImg flex flexColumn">
+						<div class="zeroAuto textAndAHalf singleBrdrBtm">{{item.name}}</div>
+						<img class="largeImg margUpDown" ng-src="{{item.img}}">
+						<div class="flex between">
+							<div class="flex wrap justifyLeft">
+								<div ng-repeat="thing in item.tags">
+									<div class="faded">{{thing}}&nbsp;</div>
+								</div>
+							</div>
+							<div>
+								<div><dir-hearts></dir-hearts></div>
+								<div><i class="fa fa-star gold"></i>: {{item.wins.length}}</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="flex">
+				<form class="uploadForm" method="POST" action="/api/submit_form/" enctype="multipart/form-data">
+					<input class="searchBox" type="file" name="mustachePicture" />
+			    	<input class="genericBtn" type="submit" value="upload" />
+				</form>
+			</div>
+		</div>
+
+	</div>
+
+	<div class="sideContain">
+		<dir-sidebar></dir-sidebar>
+	</div>
+
+</div>

@@ -4,8 +4,6 @@ app.controller('homeCtrl', function($scope, twoStacheRef, services, $firebaseArr
 	
 	$scope.twoToUse = twoStacheRef;
 
-	console.log($scope.twoToUse)
-
 	$scope.addLike = function(num) {
 		services.addLike(num);
 	}
@@ -32,10 +30,17 @@ app.controller('homeCtrl', function($scope, twoStacheRef, services, $firebaseArr
 	var happeningsArray = $firebaseArray(new Firebase("https://real-time-updates.firebaseio.com/happenings"))
 
 	$scope.postWinToFirebase = function(item) {
+		console.log(item);
 		happeningsArray.$add({
-			user: item.user,
+			userName: item.userName,
+			userId: item.userId,
 			text: " just gained a point!",
-			date: new Date().getTime()
+			date: new Date().getTime(),
+			isImportant: false
+		}).then(function() {
+			if (happeningsArray.length > 25) {
+				happeningsArray.$remove(happeningsArray[0])
+			}
 		})
 	}
 })

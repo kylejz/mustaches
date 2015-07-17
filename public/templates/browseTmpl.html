@@ -1,8 +1,20 @@
-<dir-header></dir-header>
+<div class="flex whole hunHeight">
+	
+	<div class="mainContain hunHeight">
+		<dir-header></dir-header>
+		<div class="mainPageHeadline zeroAuto flex between">
+			<div>Browse by name or tag. Like what you see. Be happy.</div>
+			<form name="browseSearchForm" ng-submit="searchForStaches(browseSearchInput)">
+				<input class="searchBox" type="search" placeholder="search for staches" ng-model="browseSearchInput" ng-disabled="browseSearchForm.$invalid">
+			</form>
+		</div>
 
-<form name="browseSearchForm" ng-submit="searchForStaches(browseSearchInput)">
-	<input type="search" placeholder="search for staches" ng-model="browseSearchInput" ng-disabled="browseSearchForm.$invalid">
-</form>
+		<div class="scroll hMax76">
+			<dir-profile-item class="flex wrap around" mustache-data="mustacheData"></dir-profile-item>
+		</div>
+	</div>
 
-
-<dir-profile-item mustache-data="mustacheData"></dir-profile-item>
+	<div class="sideContain">
+		<dir-sidebar></dir-sidebar>
+	</div>
+</div>

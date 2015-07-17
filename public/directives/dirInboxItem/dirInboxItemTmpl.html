@@ -1,0 +1,7 @@
+<div class="flex flexColumn textAndAHalf">
+	<div class="flex between">
+		<div dir-find-user="{{item.by}}">from: <span class="textBold">{{item.byName}}</span></div>
+		<div class="faded">{{item.created_on | date: "medium"}}</div>
+	</div>
+	<div class="inboxStyle margUpDown" ng-show="showMessageText">{{item.text}}</div>
+</div>

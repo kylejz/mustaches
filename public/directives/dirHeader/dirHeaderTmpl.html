@@ -1,10 +1,15 @@
-<div>
-	<div>
-		<button>stylinprofilin</button>
-	</div>
-	<div>
-		<button ng-click="goHome()">home</button>
-		<button ng-click="goBrowse()">browse</button>
-		<button ng-click="goList()">winners</button>
+<div class="flex flexColumn">
+	<div class="whole singleBrdrBtm"></div>
+	<div class="horizontalBar flex between alignCenter">
+		<div>
+			<button ng-click="getUserInfo()">my profile</button>
+			<button ng-click="getUserInbox()">inbox</button>
+		</div>
+		<div class="dblText textCenter">Mustache Wars</div>
+		<div>
+			<button ng-click="goHome()">home</button>
+			<button ng-click="goBrowse()">browse</button>
+			<button ng-click="goList()">winners</button>
+		</div>
 	</div>
 </div>

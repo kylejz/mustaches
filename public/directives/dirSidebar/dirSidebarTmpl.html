@@ -1,5 +1,41 @@
-<div ng-repeat="item in happenings">
-	<div dir-find-user="{{item.user}}">{{item.user}}</div>
-	<div>{{item.text}}</div>
-	<div am-time-ago="{{item.date}}"></div>
+<div class="relative hunHeight">
+	<div class="scroll">
+		<img class="sideBarImg zeroAuto" src="images/mustAngel_burned.png">
+		<div class="dblText singleBrdrBtm">Latest Happenings</div>
+		<div class="padFive" ng-repeat="item in happenings | limitTo: 25 | orderBy: '-date'">
+			<div>
+				<div class="textBold inline" dir-find-user="{{item.userId}}">{{item.userName}}</div>
+				<div class="inline">{{item.text}}</div>
+			</div>
+			<div class="faded" am-time-ago="{{item.date}}"></div>
+		</div>
+	</div>
+
+	<div class="fixed bottomBar">
+		<div class="flex">
+			<button ng-click="newStatusShow = !newStatusShow">Update Status</button>
+			<button ng-click="newShoutoutShow = !newShoutoutShow">Shoutout!</button>
+			<form class="middlePopUp" ng-show="newStatusShow" name="newStatusForm">
+				<input class="width55" type="text" placeholder="What's on your mind?" ng-model="newStatusText" required/>
+				<button class="width25" ng-click="postNewStatus(newStatusText)">post</button>
+			</form>
+			<form class="middlePopUp" ng-show="newShoutoutShow">
+				<input class="width55" type="text" placeholder="...to whom?" ng-model="shoutoutTarget"/>
+				<button class="width25" ng-click="findShoutoutTarget(shoutoutTarget); findShoutoutResults = !findShoutoutResults">find</button>
+			</form>
+		</div>
+		
+		<div class="shoutoutSearchResults" ng-show="findShoutoutResults" ng-repeat="thing in matchingUsers">
+			<div class="textBold" ng-click="shoutoutTextShow = !shoutoutTextShow">{{thing.username}}</div>
+			<div class="faded">{{thing.status}}</div>
+			<div class="flex around wrap">
+				<div ng-repeat="stache in thing.mustaches">
+					<img class="smallImg" ng-src="{{stache.img}}">
+				</div>
+			<form class="middlePopUp" ng-show="shoutoutTextShow">
+				<input class="width55" type="text" placeholder="What do you want to say?" ng-model="newShoutoutText"/>
+				<button class="width25" ng-click="postNewShoutout(newShoutoutText, thing); findShoutoutResults = false; shoutoutTextShow = false; newShoutoutShow = false">send</button>
+			</form>
+		</div>
+	</div>
 </div>

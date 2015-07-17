@@ -8,7 +8,6 @@ app.controller('browseCtrl', function($scope, services) {
 		services.searchForStaches(text)
 		.then(function(response) {
 			$scope.mustacheData = response;
-			console.log($scope.mustacheData);
 		})
 	}
 })

@@ -1,0 +1,16 @@
+<div class="flex whole hunHeight">		
+	<div class="mainContain hunHeight">
+		<dir-header></dir-header>
+
+		<div class="scroll hMax85 width55 zeroAuto">
+			<div class="msgBackgrnd" ng-class="{unread: !item.read}" ng-repeat="item in messages | orderBy: '-created_on'">
+				<dir-inbox-item ng-click="hasBeenRead(item)"></dir-inbox-item>
+			</div>
+		</div>
+	</div>
+
+	<div class="sideContain">
+		<dir-sidebar></dir-sidebar>
+	</div>
+
+</div>

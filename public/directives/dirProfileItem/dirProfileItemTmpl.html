@@ -1,10 +1,20 @@
-<div ng-repeat="item in mustacheData">
-	<div>{{item.name}}</div>
-	<img ng-src="{{item.img}}"/>
-	<div dir-find-user="{{item.user}}">{{item.user}}</div>
-	<div ng-repeat="tag in item.tags">
-		<div>{{tag}}</div>
+<div class="mainPageImg flex flexColumn" ng-repeat="item in mustacheData | orderBy: '-wins.length'">
+	<div class="zeroAuto textAndAHalf singleBrdrBtm">{{item.name}}</div>
+	<img class="largeImg margUpDown" ng-src="{{item.img}}"/>
+		
+	<div class="flex between">
+		<div>
+			<div dir-find-user="{{item.userId}}">by: {{item.userName}}</div>
+			<div class="flex wrap justifyLeft">
+				<div ng-repeat="tag in item.tags">
+					<div class="faded">{{tag}}&nbsp;</div>
+				</div>
+			</div>
+		</div>
+
+		<div>
+			<dir-hearts></dir-hearts>
+			<div><i class="fa fa-star gold"></i>: {{item.wins.length}}</div>
+		</div>
 	</div>
-	<dir-hearts></dir-hearts>
-	<div>wins: {{item.wins}}</div>
 </div>

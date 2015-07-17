@@ -1,12 +1,38 @@
-<dir-header></dir-header>
+<div class="flex whole hunHeight">
 
-<div>
-	<div>{{profileData.username}}</div>
-	<div>{{aggScore()}}</div>
-	<div ng-repeat="item in profileData.mustaches">
-		<div>{{item.name}}</div>
-		<img ng-src="{{item.img}}">
-		<div>{{item.hearts.length}}</div>
-		<div>{{item.wins}}</div>
+	<div class="mainContain hunHeight">
+
+		<dir-header></dir-header>
+
+		<div class="mainPageHeadline zeroAuto flex between">
+			<div>{{profileData.username}}</div>
+			<div class="faded halfText">{{profileData.status}}</div>
+		</div>
+
+		<div class="flex wrap around scroll hMax76">
+			<div ng-repeat="item in profileData.mustaches">
+				<div class="mainPageImg flex flexColumn">
+					<div class="zeroAuto textAndAHalf singleBrdrBtm">{{item.name}}</div>
+					<img class="largeImg margUpDown" ng-src="{{item.img}}">
+					<div class="flex between">
+						<div class="flex wrap justifyLeft">	
+							<div ng-repeat="thing in item.tags">
+								<div class="faded">{{thing}}&nbsp;</div>
+							</div>
+						</div>
+						<div>
+							<div><dir-hearts></dir-hearts></div>
+							<div><i class="fa fa-star gold"></i>: {{item.wins.length}}</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>	
+
+	<div class="sideContain">
+		<dir-sidebar></dir-sidebar>
 	</div>
+	
 </div>
