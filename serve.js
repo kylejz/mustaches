@@ -138,5 +138,5 @@ mongoose.connection.once('open', function() {
 	console.log('yes.');
 });
 app.listen(process.env.PORT || 9001, function() {
-	console.log('Natalie ' + port + 'man');
+	// console.log('Natalie ' + port + 'man');
 })
