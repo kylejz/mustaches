@@ -314,11 +314,17 @@ article {
 
 .splashBtn {
   background: rgba(255,255,255,0.4);
-  color: black;
-  border: 1px solid black;
+  color: white;
+  border: 1px solid white;
   border-radius: 7px;
   width: 100%;
   text-decoration: none;
+}
+
+.splashBtn:hover {
+  background: #CCFDCC;
+  color: black;
+  border-color: black;
 }
 
 .horizontalBar button:hover {
@@ -345,6 +351,7 @@ article {
 
 .bottomBar button:hover {
   background: #CCFDCC;
+  border-color: white;
 }
 
 .bottomBar::after {
@@ -379,6 +386,7 @@ article {
 .mainPageBtn:hover {
   background: #CCFDCC;
   width: 62%;
+  border-color: white;
 }
 
 .genericBtn {
@@ -389,6 +397,7 @@ article {
 
 .genericBtn:hover {
   background: #CCFDCC;
+  border-color: white;
 }
 
 .mainPageImg {
@@ -447,6 +456,6 @@ a:hover {
   text-decoration: underline;
 }
 
-dir-header:hover {
+div[dir-find-user]:hover {
   text-decoration: underline;
 }
