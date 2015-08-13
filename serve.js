@@ -5,6 +5,7 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var User = require('./models/User.js');
 var secrets = require('./facebook-auth/secrets.js');
+var config = require('./config.js');
 
 var session = require('express-session');
 var passport = require('passport');
@@ -131,7 +132,7 @@ app.post('/api/submit_form', multer({limits: {fileSize: 10*1024*1024}}), functio
   })
 })
 
-var port = 9001;
+var port = config.portNum;
 var mongoUri = 'mongodb://localhost:27017/fake-mustaches';
 mongoose.connect(mongoUri);
 mongoose.connection.once('open', function() {
