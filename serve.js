@@ -138,6 +138,6 @@ mongoose.connect(mongoUri);
 mongoose.connection.once('open', function() {
 	console.log('yes.');
 });
-app.listen(process.env.PORT || 9001, function() {
+app.listen(port, function() {
 	// console.log('Natalie ' + port + 'man');
 })
